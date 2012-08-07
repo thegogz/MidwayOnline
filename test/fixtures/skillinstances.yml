@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cp_spent: 1
+  active: false
+  rank: 1
+
+two:
+  cp_spent: 1
+  active: false
+  rank: 1

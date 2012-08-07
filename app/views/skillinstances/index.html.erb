@@ -1,0 +1,27 @@
+<h1>Listing skillinstances</h1>
+
+<table>
+  <tr>
+    <th>Cp spent</th>
+    <th>Active</th>
+    <th>Rank</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @skillinstances.each do |skillinstance| %>
+  <tr>
+    <td><%= skillinstance.cp_spent %></td>
+    <td><%= skillinstance.active %></td>
+    <td><%= skillinstance.rank %></td>
+    <td><%= link_to 'Show', skillinstance %></td>
+    <td><%= link_to 'Edit', edit_skillinstance_path(skillinstance) %></td>
+    <td><%= link_to 'Destroy', skillinstance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Skillinstance', new_skillinstance_path %>

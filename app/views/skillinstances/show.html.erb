@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cp spent:</b>
+  <%= @skillinstance.cp_spent %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @skillinstance.active %>
+</p>
+
+<p>
+  <b>Rank:</b>
+  <%= @skillinstance.rank %>
+</p>
+
+
+<%= link_to 'Edit', edit_skillinstance_path(@skillinstance) %> |
+<%= link_to 'Back', skillinstances_path %>

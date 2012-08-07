@@ -1,0 +1,29 @@
+<%= form_for(@skillinstance) do |f| %>
+  <% if @skillinstance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@skillinstance.errors.count, "error") %> prohibited this skillinstance from being saved:</h2>
+
+      <ul>
+      <% @skillinstance.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cp_spent %><br />
+    <%= f.number_field :cp_spent %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </div>
+  <div class="field">
+    <%= f.label :rank %><br />
+    <%= f.number_field :rank %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

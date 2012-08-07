@@ -1,0 +1,2 @@
+module SkillinstancesHelper
+end

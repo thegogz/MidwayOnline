@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @player.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @player.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @player.phone %>
+</p>
+
+<h3>Active Characters</h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Background</th>
+	<th></th>
+  </tr>
+
+<% @active_characters.each do |character| %>
+  <tr>
+	<%= form_for character, url: demote_player_character_path(@player,character) do |f| %>
+    <td><%= character.name %></td>
+    <td><%= character.background %></td>
+	<td>
+		<%= f.submit "Demote" %>
+	</td>
+	<% end %>
+  </tr>
+<% end %>
+</table>
+<br />
+<h3>Inactive Characters</h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Background</th>
+	<th>Action</th>
+  </tr>
+
+<% @inactive_characters.each do |character| %>
+  <tr>
+	<%= form_for character, url: promote_player_character_path(@player,character) do |f| %>
+    <td><%= character.name %></td>
+    <td><%= character.background %></td>
+	<td>
+		<%= f.submit "Promote" %>
+	</td>
+	<% end %>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= link_to 'New Character', new_player_character_path(@player) %> <br />
+
+<%= link_to 'Edit', edit_player_path(@player) %> |
+<%= link_to 'Back', players_path %>

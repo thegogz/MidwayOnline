@@ -1,0 +1,28 @@
+<h1>Listing characters for <%= @player.name %></h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Background</th>
+    <th>Active</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @characters.each do |character| %>
+  <tr>
+    <td><%= character.name %></td>
+    <td><%= character.background %></td>
+    <td><%= character.active %></td>
+    <td><%= link_to 'Show', [@player, character] %></td>
+    <td><%= link_to 'Edit', edit_player_character_path(@player, character) %></td>
+    <td><%= link_to 'Destroy', [@player, character], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Back To Player Profile', player_path(@player) %> |
+<%= link_to 'New Character', new_player_character_path(@player) %>
